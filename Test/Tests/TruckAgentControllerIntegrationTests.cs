@@ -4,15 +4,17 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using LogisticsRestApi.Model;
-using Logistics_Hackathon_CSharp.Model;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace Tests;
 
-public class TruckAgentControllerTests
+public sealed class TruckAgentControllerTests
 {
+    
+    const string FilePath = "Resources/decide.json";
+    
     private DecideRequest _request;
 
     // client
@@ -22,8 +24,7 @@ public class TruckAgentControllerTests
     public void Setup()
     {
         // init request from file: decide.json
-        string filePath = "Resources/decide.json";
-        string json = File.ReadAllText(filePath);
+        var json = File.ReadAllText(FilePath);
         // deserialize
         _request = JsonConvert.DeserializeObject<DecideRequest>(json);
         var application = new WebApplicationFactory<Program>()
@@ -44,7 +45,7 @@ public class TruckAgentControllerTests
         var responseObject = JsonConvert.DeserializeObject<DecideResponse>(responseBody);
 
         // ensure deliver command is returned
-        Assert.AreEqual(DecisionResponseType.Deliver.ToString(), responseObject.Command.Value.ToString());
+        Assert.AreEqual(DecisionResponseType.Deliver.ToString(), responseObject.Command.ToString());
     }
 
     [Test]
@@ -58,7 +59,7 @@ public class TruckAgentControllerTests
         var responseObject = JsonConvert.DeserializeObject<DecideResponse>(responseBody);
 
         // ensure sleep command is returned
-        Assert.AreEqual(DecisionResponseType.Sleep.ToString(), responseObject.Command.Value.ToString());
+        Assert.AreEqual(DecisionResponseType.Sleep.ToString(), responseObject?.Command.ToString());
     }
     // do request to /decide
 }

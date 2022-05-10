@@ -1,8 +1,7 @@
 using LogisticsRestApi.Model;
-using Logistics_Hackathon_CSharp.Model;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LogisticksRestApi.Controllers;
+namespace LogisticsRestApi.Controllers;
 
 [ApiController]
 [Route("decide")]
@@ -18,9 +17,7 @@ public class TruckAgentController : ControllerBase
     {
         _logger.LogInformation("Decide request received {@truck} {@offers}", request.Truck, request.Offers);
         var firstOffer = request.Offers.FirstOrDefault();
-        
-        if (firstOffer != null) { return DecideResponse.Deliver(firstOffer.Uid); }
 
-        return DecideResponse.Sleep(1);
+        return firstOffer != null ? DecideResponse.Deliver(firstOffer.Uid) : DecideResponse.Sleep(1);
     }
 }
