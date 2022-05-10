@@ -1,0 +1,23 @@
+{
+  "truck": {
+    "balance": 100.0,
+    "uid": 1,
+    "loc": "Rustport",
+    "driving_non_stop": 3.25,
+    "time": 13.25
+  },
+  "offers": [
+    {
+      "uid": 10,
+      "origin": "FROM",
+      "dest": "TO",
+      "name": "Cogs",
+      "price": 100.1,
+      "eta_to_cargo": 10.0,
+      "km_to_cargo": 200.0,
+      "km_to_deliver": 100.0,
+      "eta_to_deliver": 20.0
+    }
+  ],
+  "is_fleet": true
+}
