@@ -7,33 +7,21 @@ namespace LogisticsRestApi.Model;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum DecisionResponseType
 {
-    [EnumMember(Value = "DELIVER")] Deliver,
-    [EnumMember(Value = "SLEEP")] Sleep,
-    [EnumMember(Value = "DRIVE")] Drive,
-    [EnumMember(Value = "LOAD")] Load,
-    [EnumMember(Value = "ROUTE")] Route,
-    [EnumMember(Value = "UNLOAD")] Unload
+    [EnumMember(Value = "DELIVER")] Deliver, [EnumMember(Value = "SLEEP")] Sleep, [EnumMember(Value = "ROUTE")] Route,
 }
 
-public record DecideResponse(
-    DecisionResponseType Command = DecisionResponseType.Sleep,
-    object Argument = default
-)
+public abstract record DecideResponse(
+    DecisionResponseType Command = DecisionResponseType.Sleep
+);
+
+public record DeliverResponse(int Argument) : DecideResponse(DecisionResponseType.Deliver)
 {
-    public static DecideResponse Deliver(int cargoUid)
-    {
-        return new DecideResponse(DecisionResponseType.Deliver, cargoUid);
-    }
+}
 
-    public static DecideResponse Route(string destinationName)
-    {
-        return new DecideResponse(DecisionResponseType.Route, destinationName);
-    }
+public record SleepResponse(int Argument) : DecideResponse(DecisionResponseType.Sleep)
+{
+}
 
-    public static DecideResponse Sleep(int hours)
-    {
-        if (hours < 1) { throw new Exception("Hours must be greater than 0"); }
-
-        return new DecideResponse(DecisionResponseType.Sleep, hours);
-    }
+public record RouteResponse(string Argument) : DecideResponse(DecisionResponseType.Deliver)
+{
 }

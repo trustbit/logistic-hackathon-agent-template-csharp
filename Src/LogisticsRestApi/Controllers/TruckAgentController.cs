@@ -18,6 +18,6 @@ public class TruckAgentController : ControllerBase
         _logger.LogInformation("Decide request received {@truck} {@offers}", request.Truck, request.Offers);
         var firstOffer = request.Offers.FirstOrDefault();
 
-        return firstOffer != null ? DecideResponse.Deliver(firstOffer.Uid) : DecideResponse.Sleep(1);
+        return firstOffer != null ? new DeliverResponse(firstOffer.Uid) : new SleepResponse(1);
     }
 }
