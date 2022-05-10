@@ -19,6 +19,6 @@ RUN dotnet publish "/src/Src/LogisticsRestApi/LogisticsRestApi.csproj" -c Releas
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-# map to port 80
+
 EXPOSE 80
 ENTRYPOINT ["dotnet", "LogisticsRestApi.dll"]

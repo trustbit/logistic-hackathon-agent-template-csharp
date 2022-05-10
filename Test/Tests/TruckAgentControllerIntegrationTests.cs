@@ -12,9 +12,8 @@ namespace Tests;
 
 public sealed class TruckAgentControllerTests
 {
-    
     const string FilePath = "Resources/decide.json";
-    
+
     private DecideRequest _request;
 
     // client
@@ -45,7 +44,7 @@ public sealed class TruckAgentControllerTests
         var responseObject = JsonConvert.DeserializeObject<DecideResponse>(responseBody);
 
         // ensure deliver command is returned
-        Assert.AreEqual(DecisionResponseType.Deliver.ToString(), responseObject.Command.ToString());
+        Assert.AreEqual(DecisionResponseType.DELIVER.ToString(), responseObject.Command.ToString());
     }
 
     [Test]
@@ -59,7 +58,7 @@ public sealed class TruckAgentControllerTests
         var responseObject = JsonConvert.DeserializeObject<DecideResponse>(responseBody);
 
         // ensure sleep command is returned
-        Assert.AreEqual(DecisionResponseType.Sleep.ToString(), responseObject?.Command.ToString());
+        Assert.AreEqual(DecisionResponseType.SLEEP.ToString(), responseObject?.Command.ToString());
     }
     // do request to /decide
 }
