@@ -1,0 +1,64 @@
+{
+  "locations": [
+    {
+      "name": "Cogburg",
+      "roads": {
+        "Copperhold": 1047.0,
+        "Steamdrift": 1269.0,
+        "Rustport": 1421.0,
+        "Irondale": 1034.0
+      }
+    },
+    {
+      "name": "Copperhold",
+      "roads": {
+        "Cogburg": 1047.0,
+        "Irondale": 345.0,
+        "Leverstorm": 569.0
+      }
+    },
+    {
+      "name": "Leverstorm",
+      "roads": {
+        "Irondale": 629.0,
+        "Copperhold": 569.0,
+        "Gizbourne": 866.0
+      }
+    },
+    {
+      "name": "Irondale",
+      "roads": {
+        "Leverstorm": 629.0,
+        "Copperhold": 345.0,
+        "Gizbourne": 526.0,
+        "Cogburg": 1034.0,
+        "Rustport": 1302.0
+      }
+    },
+    {
+      "name": "Steamdrift",
+      "roads": {
+        "Cogburg": 1269.0,
+        "Rustport": 1947.0
+      }
+    },
+    {
+      "name": "Gizbourne",
+      "roads": {
+        "Leverstorm": 866.0,
+        "Rustport": 1220.0,
+        "Irondale": 526.0
+      }
+    },
+    {
+      "name": "Rustport",
+      "roads": {
+        "Cogburg": 1421.0,
+        "Steamdrift": 1947.0,
+        "Gizbourne": 1220.0,
+        "Irondale": 1302.0
+      }
+    }
+  ],
+  "fuel_cost": 2.023
+}
