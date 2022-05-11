@@ -41,7 +41,7 @@ public sealed class TruckAgentControllerTests
     {
         var response = _client.PostAsJsonAsync("/decide", _request).Result;
         var responseBody = await response.Content.ReadAsStringAsync();
-        var responseObject = JsonConvert.DeserializeObject<DecideResponse>(responseBody);
+        var responseObject = JsonConvert.DeserializeObject<RouteResponse>(responseBody);
 
         // ensure deliver command is returned
         Assert.AreEqual(DecisionResponseType.DELIVER.ToString(), responseObject.Command.ToString());
@@ -55,7 +55,7 @@ public sealed class TruckAgentControllerTests
 
         var response = _client.PostAsJsonAsync("/decide", requestWithoutOffers).Result;
         var responseBody = await response.Content.ReadAsStringAsync();
-        var responseObject = JsonConvert.DeserializeObject<DecideResponse>(responseBody);
+        var responseObject = JsonConvert.DeserializeObject<SleepResponse>(responseBody);
 
         // ensure sleep command is returned
         Assert.AreEqual(DecisionResponseType.SLEEP.ToString(), responseObject?.Command.ToString());
