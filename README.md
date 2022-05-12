@@ -25,8 +25,9 @@
 
 ## How can I test my truck agent?
 - Open the project in your favorite IDE and browse to [Test/Tests/TruckAgentControllerIntegrationTests.cs](Test/Tests/TruckAgentControllerIntegrationTests.cs)
-- This is an integration test which will start your agent and will call the `decide` method with the contents of file [Test/Tests/Resources/decide.json](Test/Tests/Resources/decide.json)
-- You can always change the `decide.json` file and debug your script.
+- This is an integration test which will start your agent and will call the `decide` method with the contents of file [Test/Tests/Resources/sample_decide_0.json](Test/Tests/Resources/sample_decide_0.json)
+- You can always change the test and debug your script.
+- Also checkout the other sample requests provided.
 
 ## How can I run the truck agent or its tests without an IDE?
 - `dotnet run -p Src/LogisticsRestApi/LogisticsRestApi.csproj ` will start the truck agent, which will then service requests on port 8080.

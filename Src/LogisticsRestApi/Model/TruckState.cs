@@ -3,9 +3,9 @@ using System.Text.Json.Serialization;
 namespace LogisticsRestApi.Model;
 
 public record TruckState(
-    int Uid,
-    double Balance,
-    string Loc,
-    [property: JsonPropertyName("driving_non_stop")] double DrivingNonStop,
-    double Time
+    [property: JsonPropertyName("uid")] int Uid,
+    [property: JsonPropertyName("balance")] double Balance,
+    [property: JsonPropertyName("loc")] string Loc,
+    [property: JsonPropertyName("hours_since_full_rest")] double HoursSinceFullRest,
+    [property: JsonPropertyName("time")] double Time
 );

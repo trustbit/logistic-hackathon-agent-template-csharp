@@ -20,11 +20,19 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Include="Resources\decide.json">
+      <EmbeddedResource Include="Resources\sample_decide_0.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-
-      <EmbeddedResource Include="Resources\world.json">
+      <EmbeddedResource Include="Resources\sample_decide_1.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\sample_decide_2.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\sample_decide_3.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\sample_decide_4.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>

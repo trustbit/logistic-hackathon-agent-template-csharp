@@ -17,6 +17,6 @@ public record SleepResponse(int Argument) : DecideResponse(DecisionResponseType.
 {
 }
 
-public record RouteResponse(string Argument) : DecideResponse(DecisionResponseType.DELIVER)
+public record RouteResponse(string Argument) : DecideResponse(DecisionResponseType.ROUTE)
 {
 }
