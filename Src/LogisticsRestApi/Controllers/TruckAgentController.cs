@@ -21,4 +21,3 @@ public class TruckAgentController : ControllerBase
         return firstOffer != null ? new DeliverResponse(firstOffer.Uid) : new SleepResponse(1);
     }
 }
-// redirect request to / to /swagger

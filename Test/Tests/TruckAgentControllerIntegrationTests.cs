@@ -45,6 +45,6 @@ public sealed class TruckAgentControllerTests
 
         // ensure deliver command is returned
         Assert.AreEqual(DecisionResponseType.DELIVER.ToString(), responseObject.Command.ToString());
-        Assert.AreEqual(57, responseObject.Argument);
+        Assert.AreEqual(100, responseObject.Argument);
     }
 }

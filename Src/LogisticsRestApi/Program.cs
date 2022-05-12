@@ -7,13 +7,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerDocument();
 builder.Services.AddControllers()
-   .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+    .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
 var app = builder.Build();
 app.UseOpenApi();
 
 // Configure the HTTP request pipeline.
 app.UseSwaggerUi3();
-//app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
