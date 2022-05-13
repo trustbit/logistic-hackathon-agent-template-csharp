@@ -16,7 +16,7 @@
 **For a detailed explanation of how to make a copy of this repository and get it into the competition build system, please visit [Agent template repositories and competition build system](https://github.com/trustbit/logistic-hackathon-public#3-create-a-new-ssh-key-for-the-competition-build-system). All questions about the simulation and its rules are answered under [Simulation](https://github.com/trustbit/logistic-hackathon-public#simulation).**
 
 ## Prerequisites
-- **IDE** - We strongly advise you to use an IDE which will help you to edit, compile and run C# code. Our recommendation is [VS Code](https://code.visualstudio.com/download) , which you can download for free.
+- **IDE** - We strongly advise you to use an IDE which will help you to edit, compile and run C# code. Our recommendation is [VS Code](https://code.visualstudio.com/download), which you can download for free.
 - **.NET 6** - You will need the .NET 6 SDK installed on your machine. You can find it on [Microsoft's website](https://www.microsoft.com/net/download/sdk-list).
 
 ## Where should I add the logic of my truck agent?
@@ -36,3 +36,6 @@
 ## Can I build a Docker image and run it locally 
 - `docker build -t logistic-agent .` will build a local Docker image
 - `docker run -p 8080:8080 logistic-agent` will start the truck agent locally in a container and will service requests on port 8080.
+
+## Can I get more information about the model properties?
+Sure, check out our [API documentation](https://app.swaggerhub.com/apis-docs/trustbit/trustbit-sustainable-logistics-simulation/1.0.0) and also thoroughly read our [Simulation documentation](https://github.com/trustbit/logistic-hackathon-public#simulation).
